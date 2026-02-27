@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Willian Carlos Pedroso | Portfólio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f6f8fc;
+color:#1f2937;
+scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+position:fixed;
+width:100%;
+top:0;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+z-index:1000;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#1f2937;
+font-weight:500;
+}
+
+/* HERO */
+.hero{
+margin-top:100px;
+max-width:1200px;
+margin-left:auto;
+margin-right:auto;
+padding:80px 20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.hero h1{
+font-size:52px;
+line-height:1.1;
+}
+
+.hero h2{
+font-size:28px;
+color:#2563eb;
+margin-top:10px;
+min-height:40px;
+}
+
+.badge{
+display:inline-block;
+margin-top:15px;
+padding:8px 20px;
+background:#2563eb;
+color:white;
+border-radius:30px;
+font-size:16px;
+text-decoration:none;
+}
+
+.hero img{
+width:320px;
+justify-self:center;
+filter:drop-shadow(0 15px 40px rgba(0,0,0,0.25));
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+/* COUNTER */
+.counter-box{
+margin-top:30px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+display:inline-block;
+}
+
+.counter-number{
+font-size:72px;
+font-weight:700;
+color:#2563eb;
+}
+
+/* SECTIONS */
+section{
+max-width:1200px;
+margin:auto;
+padding:100px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+section h2{
+font-size:36px;
+margin-bottom:30px;
+}
+
+/* SOBRE */
+.about{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+line-height:1.8;
+}
+
+/* TIMELINE COM IMAGEM */
+.timeline{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.timeline-card{
+height:260px;
+border-radius:20px;
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transition:.3s;
+}
+
+.timeline-card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.timeline-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.3));
+padding:25px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+}
+
+.timeline-overlay h3{
+margin-bottom:5px;
+}
+
+.timeline-overlay span{
+font-size:14px;
+opacity:.9;
+}
+
+/* FORMAÇÃO */
+.education{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:30px;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+align-items:center;
+}
+
+.education img{
+width:100%;
+border-radius:15px;
+}
+
+/* SKILLS */
+.skills span{
+display:inline-block;
+background:#2563eb;
+color:white;
+padding:10px 20px;
+margin:6px;
+border-radius:25px;
+}
+
+/* FOOTER */
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+.education{
+grid-template-columns:1fr;
+text-align:center;
+}
+}
+/* CONTATO */
+#contato{
+color:white;
+text-align:center;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:20px;
+background:#25D366;
+color:rgb(255, 255, 255);
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+font-size:1.2rem;
+transition:.3s;
+}
+
+.whatsapp:hover{
+background:#1ebe5d;
+}
+
+/* ANIMAÇÃO */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h3>Portfólio</h3>
+<div>
+<a href="#sobre">Sobre</a>
+<a href="#experiencia">Experiência</a>
+<a href="#formacao">Formação</a>
+<a href="#habilidades">Habilidades</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>Willian Carlos Pedroso</h1>
+<h2 id="typing"></h2>
+
+<div class="counter-box">
+<div class="counter-number"><span id="anos">0</span>+</div>
+<div>Anos de experiência profissional</div>
+</div>
+</div>
+
+<img src="willian.png" alt="Foto Willian">
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+<h2>Sobre</h2>
+<div class="about">
+<p>Profissional com mais de 16 anos de experiência no mercado, atuando em empresas de grande porte nos setores industrial, logístico e administrativo.</p>
+<p>Construiu uma trajetória sólida de crescimento profissional, iniciando em funções operacionais e alcançando cargos administrativos e comerciais.</p>
+<p>Formado em Gestão Financeira pela Universidade Paulista (UNIP), possui forte domínio de processos administrativos, organização documental e atendimento ao cliente.</p>
+<p>Reconhecido pela postura ética, responsabilidade e foco em resultados.</p>
+</div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
+<h2>Experiência Profissional</h2>
+
+<div class="timeline">
+
+<div class="timeline-card" style="background-image:url('https://satotrader.com.br/site/views/data/noticias/acoes-da-brf-brfs3-comprar-ou-vender-image-1713292777.jpg')">
+<div class="timeline-overlay">
+<h3>BRF - Operador de Máquinas</h3>
+<span>2010 – 2013</span>
+<p>Operação de máquinas industriais e controle de qualidade.</p>
+</div>
+</div>
+
+<div class="timeline-card" style="background-image:url('data:image/png;base64,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')">
+<div class="timeline-overlay">
+<h3>Vetor Automotivos - Preparador de Pedidos</h3>
+<span>2013 – 2017</span>
+<p>Separação, organização e expedição de pedidos.</p>
+</div>
+</div>
+
+<div class="timeline-card" style="background-image:url('data:image/png;base64,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')">
+<div class="timeline-overlay">
+<h3>Vetor Automotivos - Conferente</h3>
+<span>2017 – 2021</span>
+<p>Controle de estoque e documentos logísticos.</p>
+</div>
+</div>
+
+<div class="timeline-card" style="background-image:url('data:image/png;base64,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')">
+<div class="timeline-overlay">
+<h3>Vetor Automotivos - Assistente Administrativo</h3>
+<span>2021 – 2025</span>
+<p>Atendimento a clientes e suporte comercial.</p>
+</div>
+</div>
+
+<div class="timeline-card" style="background-image:url('https://storage.googleapis.com/ecdt-logo-saida/a2cbd76418db3dc75c1504970e8d422be3bd40148f51b9107dc528a715c0663a/VIDEIRA-IMPLEMENTOS.webp')">
+<div class="timeline-overlay">
+<h3>Videira Implementos Rodoviários</h3>
+<span>2025 – Atual</span>
+<p>Rotinas administrativas comerciais e organização de processos.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+<h2>Formação Acadêmica</h2>
+
+<div class="education">
+<img src="https://municipais.org.br/wp-content/uploads/2019/11/logo-UNIP.png" alt="UNIP">
+<div>
+<h3>Gestão Financeira</h3>
+<p><strong>Universidade Paulista (UNIP)</strong></p>
+<p>2020 – 2022</p>
+<p>Formação focada em planejamento financeiro, controle de custos e gestão empresarial.</p>
+</div>
+</div>
+</section>
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+<h2>Habilidades</h2>
+<div class="skills">
+<span>Rotinas Administrativas</span>
+<span>Gestão Comercial</span>
+<span>Controle Financeiro</span>
+<span>Atendimento ao Cliente</span>
+<span>Organização</span>
+<span>Pacote Office</span>
+<span>Logística</span>
+<span>Comunicação</span>
+</div>
+</section>
+<section id="contato" class="reveal">
+<h3>Contato</h3>
+<p>Entre em contato diretamente pelo WhatsApp:</p>
+
+<a class="whatsapp" href="https://wa.me/554791591136" target="_blank">
+WhatsApp: (47) 9159-1136
+</a>
+</section>
+
+<footer>
+<p>© 2026 - Portfólio Profissional de Willian Carlos Pedroso</p>
+</footer>
+
+<script>
+// typing
+const text="Assistente Administrativo Comercial";
+let i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,70);
+}
+}
+typing();
+
+// scroll reveal
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+const trigger=window.innerHeight*0.85;
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<trigger){
+sec.classList.add("show");
+}
+});
+});
+
+// counter
+let years=new Date().getFullYear()-2010;
+let count=0;
+let counter=document.getElementById("anos");
+let interval=setInterval(()=>{
+if(count<years){
+count++;
+counter.innerText=count;
+}else{
+clearInterval(interval);
+}
+},60);
+</script>
+
+</body>
+</html>
